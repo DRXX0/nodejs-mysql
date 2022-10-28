@@ -3,7 +3,7 @@ import {pool} from '../db.js'
 export const getEmployees = async (req, res) => {
     try{
     const [rows] = await pool.query('SELECT * from employee')
-    res.json(rows[0])
+    res.json(rows)
     } catch(error){
         return res.status(500).json({
             message: 'Something went wrong'
